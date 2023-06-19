@@ -1,10 +1,18 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './App.css';
+import Rockets from './components/Rockets';
+import MyProfile from './components/MyProfile';
 
 function App() {
   return (
-    <div className="App">
-      <h1>React App!</h1>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+      </Routes>
+    </>
   );
 }
 
