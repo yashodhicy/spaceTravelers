@@ -9,7 +9,6 @@ export const FetchMissions = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios(url);
-      console.log(resp);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('something went wrong');
@@ -43,7 +42,6 @@ const missionsSlice = createSlice({
           description: element.description,
         }));
         state.missions = missions;
-        console.log(state.missions);
       })
       .addCase(FetchMissions.rejected, (state) => {
         state.isLoading = false;

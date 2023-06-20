@@ -16,30 +16,30 @@ const Missions = () => {
 
   return (
     <div className="mx-5">
-    <Table striped bordered hover responsive="sm">
-      <thead>
-        <tr className="fw-bold">
-          <td  style={{ width: '10%' }}>Mission</td>
-          <td style={{ width: '70%' }}>discription</td>
-          <td style={{ width: '10%' }}>status</td>
-          <td style={{ width: '10%' }}>
-            {' '}
-            {'   '}
-            {' '}
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        {allMissons.map((el) => (
-          <tr key={el.mission_id}>
-            <td className="fw-bold">{el.mission_name}</td>
-            <td>{el.description}</td>
-            <td>  tobe</td>
-            <td>  tobe</td>
+      <Table striped bordered hover responsive="sm">
+        <thead>
+          <tr className="fw-bold">
+            <td style={{ width: '10%' }}>Mission</td>
+            <td style={{ width: '70%' }}>discription</td>
+            <td style={{ width: '10%' }}>status</td>
+            <td style={{ width: '10%' }}>
+              {' '}
+              {'   '}
+              {' '}
+            </td>
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {allMissons.map((el) => (
+            <tr key={el.mission_id}>
+              <td className="fw-bold">{el.mission_name}</td>
+              <td>{el.description}</td>
+              <td>  tobe</td>
+              <td>  tobe</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };
