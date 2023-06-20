@@ -43,6 +43,7 @@ const missionsSlice = createSlice({
           description: element.description,
         }));
         state.missions = missions;
+        console.log(state.missions);
       })
       .addCase(FetchMissions.rejected, (state) => {
         state.isLoading = false;
