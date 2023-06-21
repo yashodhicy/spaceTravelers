@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
-import { FetchMissions } from '../redux/missions/missionsSlice';
+import { FetchMissions} from '../redux/missions/missionsSlice';
+import { joinMission , leaveMission} from '../redux/missions/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -34,8 +35,19 @@ const Missions = () => {
             <tr key={el.mission_id}>
               <td className="fw-bold">{el.mission_name}</td>
               <td>{el.description}</td>
-              <td>  tobe</td>
-              <td>  tobe</td>
+              <td>{ el.reserved ? (
+                   'Active Member'
+              ):(
+                  'Not a Member'
+              )}
+              </td>
+              <td>{ el.reserved ? (
+                <button onClick={()=>dispatch(leaveMission({id:el.mission_id}))}>Leave Missions</button>
+              ) : (
+                <button onClick={() => dispatch(joinMission({ id: el.mission_id }))}>Join Missions</button>
+              )}
+              </td>
+              
             </tr>
           ))}
         </tbody>
@@ -43,5 +55,6 @@ const Missions = () => {
     </div>
   );
 };
+
 
 export default Missions;
