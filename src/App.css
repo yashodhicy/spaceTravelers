@@ -19,3 +19,7 @@
 .badge {
   margin-right: 5px;
 }
+
+.profile-container {
+  display: flex;
+}
