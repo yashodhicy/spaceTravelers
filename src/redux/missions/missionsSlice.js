@@ -16,7 +16,6 @@ export const FetchMissions = createAsyncThunk(
   },
 );
 
-
 const initialState = {
   missions: [],
   isLoading: false,
@@ -30,26 +29,24 @@ const missionsSlice = createSlice({
       const { id } = action.payload;
 
       const updatedMissions = state.missions.map((mission) => {
-        if (mission.mission_id !== id) 
-          return mission;
-        
+        if (mission.mission_id !== id) { return mission; }
+
         return { ...mission, reserved: true };
       });
 
       console.log('Updated Missions:', updatedMissions);
-      
+
       return { ...state, missions: updatedMissions };
     },
 
-    leaveMission:(state,action) => {
-      const {id} = action.payload;
-      const updatedMissions = state.missions.map((mission) =>{
-        if (mission.mission_id === id)
-          return {...mission,reserved:false};
+    leaveMission: (state, action) => {
+      const { id } = action.payload;
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.mission_id === id) { return { ...mission, reserved: false }; }
         return mission;
-      })
+      });
       console.log('Updated Missions:', updatedMissions);
-      
+
       return { ...state, missions: updatedMissions };
     },
 
@@ -76,5 +73,5 @@ const missionsSlice = createSlice({
   },
 });
 
-export const { joinMission , leaveMission} = missionsSlice.actions;
+export const { joinMission, leaveMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
