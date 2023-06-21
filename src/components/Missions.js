@@ -23,8 +23,8 @@ const Missions = () => {
         <thead>
           <tr className="fw-bold">
             <td style={{ width: '10%' }}>Mission</td>
-            <td style={{ width: '65%' }}>discription</td>
-            <td style={{ width: '10%' }}>status</td>
+            <td style={{ width: '65%' }}>Discription</td>
+            <td style={{ width: '10%' }}>Status</td>
             <td style={{ width: '15%' }}>
               {' '}
               {'   '}
@@ -40,7 +40,7 @@ const Missions = () => {
               <td className="text-center">{ el.reserved ? (
                    <Badge bg="info">Active Member</Badge>
               ): (
-                  <Badge bg="secondary">Not a Member</Badge>
+                  <Badge bg="secondary">NOT A MEMBER</Badge>
                )}
               </td>
               <td className="text-center">{ el.reserved ? (

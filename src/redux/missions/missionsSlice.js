@@ -16,27 +16,6 @@ export const FetchMissions = createAsyncThunk(
   },
 );
 
-// export const JoinMissions = (state,id) => {
-//   const newState = state.map((mission) => {
-//     if (mission.mission_id !== id) 
-//       return mission
-//     return { ...mission, reserved: true }
-//   })
-//   console.log(newState);
-//   return { type: 'missions/joinMissions', payload: newState };
-// };
-
-// export const LeaveMissions = (state,id) => {
-//   const newState = state.map((mission) => {
-//     if (mission.mission_id === id) {
-//       return { ...mission, reserved: false };
-//     }
-//     return mission;
-//   });
-//   return { type: 'missions/leaveMissions', payload: newState };
-// };
-
-
 
 const initialState = {
   missions: [],
