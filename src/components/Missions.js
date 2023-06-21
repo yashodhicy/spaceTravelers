@@ -17,7 +17,7 @@ const Missions = () => {
   const allMissons = useSelector((state) => state.missions.missions);
 
   return (
-    <div className="mx-5">
+    <div className="mx-5 px-4">
       <Table striped bordered hover responsive="sm">
         <thead>
           <tr className="fw-bold">

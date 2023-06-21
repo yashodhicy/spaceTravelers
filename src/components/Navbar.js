@@ -5,7 +5,7 @@ import Stack from 'react-bootstrap/Stack';
 import Uranus from './assets/uranus.png';
 
 const Navbar = () => (
-  <Stack direction="horizontal" gap={3} className="mx-5 my-3 pb-3" style={{ borderBottom: '1px solid black' }}>
+  <Stack direction="horizontal" gap={3} className="mx-5 my-3 pb-3 px-4" style={{ borderBottom: '1px solid black' }}>
     <img src={Uranus} style={{ width: 64, height: 64 }} alt="logo" />
     <h1>Space Travelers&apos; Hub</h1>
     <Nav activeKey="/" className="ms-auto">
