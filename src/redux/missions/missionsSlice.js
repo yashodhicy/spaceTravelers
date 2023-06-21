@@ -34,8 +34,6 @@ const missionsSlice = createSlice({
         return { ...mission, reserved: true };
       });
 
-      console.log('Updated Missions:', updatedMissions);
-
       return { ...state, missions: updatedMissions };
     },
 
@@ -45,7 +43,6 @@ const missionsSlice = createSlice({
         if (mission.mission_id === id) { return { ...mission, reserved: false }; }
         return mission;
       });
-      console.log('Updated Missions:', updatedMissions);
 
       return { ...state, missions: updatedMissions };
     },
