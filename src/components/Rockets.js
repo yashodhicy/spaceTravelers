@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FetchRockets } from '../redux/rockets/rocketsSlice';
+import Badge from 'react-bootstrap/Badge';
+import { FetchRockets, addReservation, cancelReservation } from '../redux/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -21,10 +22,21 @@ const Rockets = () => {
             <img alt="rocket" className="rocket-image" src={rocket.image} style={{ width: 300 }} />
             <div className="rocket-details">
               <h2>{rocket.rocket_name}</h2>
-              <p>{rocket.description}</p>
-              <button type="button" className="btn btn-primary">
-                Reserve Rocket
-              </button>
+              <p>
+                {rocket.reserved ? (
+                  <Badge bg="info" className="badge">Reserved</Badge>
+                ) : null}
+                {rocket.description}
+              </p>
+              { rocket.reserved ? (
+                <button type="button" className="btn btn-outline-secondary" onClick={() => dispatch(cancelReservation({ id: rocket.id }))}>
+                  Cancel Reservation
+                </button>
+              ) : (
+                <button type="button" className="btn btn-primary" onClick={() => dispatch(addReservation({ id: rocket.id }))}>
+                  Reserve Rocket
+                </button>
+              )}
             </div>
           </li>
         ))}
