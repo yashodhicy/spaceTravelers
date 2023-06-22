@@ -10,13 +10,13 @@ const MyProfile = () => {
       <h2>My Missions</h2>
       <Table bordered>
         <tbody>
-          {
+        {
         joinedmissions.map((mission) => (
           <tr key={mission.mission_id}>
             <td style={{ fontWeight: '400' }}>{mission.mission_name}</td>
           </tr>
         ))
-}
+        }
         </tbody>
 
       </Table>
