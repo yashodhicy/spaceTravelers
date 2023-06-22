@@ -7,7 +7,7 @@ describe('Navbar Should render as expected', () => {
     const result = render(
       <MemoryRouter>
         <Navbar />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     expect(result).toMatchSnapshot();
   });

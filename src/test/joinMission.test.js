@@ -11,7 +11,9 @@ describe('joinMission reducer', () => {
 
     const expectedState = {
       missions: [
-        { mission_id: '454d', mission_name: 'Mission 1', description: 'Description 1', reserved: true },
+        {
+          mission_id: '454d', mission_name: 'Mission 1', description: 'Description 1', reserved: true,
+        },
         { mission_id: '532', mission_name: 'Mission 2', description: 'Description 2' },
       ],
     };
@@ -22,4 +24,3 @@ describe('joinMission reducer', () => {
     expect(actualState).toEqual(expectedState);
   });
 });
-

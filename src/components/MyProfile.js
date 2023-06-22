@@ -20,7 +20,7 @@ const MyProfile = () => {
           </tr>
         ))
         }
-        </tbody>
+          </tbody>
 
         </Table>
       </div>

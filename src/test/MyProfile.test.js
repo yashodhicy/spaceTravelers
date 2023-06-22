@@ -17,10 +17,10 @@ const store = mockStore({
 
 test('renders MyProfile component', () => {
   // Render the component with the mock Redux store
-  const { getByText ,queryByText } = render(
+  const { getByText, queryByText } = render(
     <Provider store={store}>
       <MyProfile />
-    </Provider>
+    </Provider>,
   );
 
   // Assert that the component renders the mission names correctly
