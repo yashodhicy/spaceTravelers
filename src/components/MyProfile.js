@@ -19,7 +19,7 @@ const MyProfile = () => {
             <td style={{ fontWeight: '400' }}>{mission.mission_name}</td>
           </tr>
         ))
-}
+        }
           </tbody>
 
         </Table>
