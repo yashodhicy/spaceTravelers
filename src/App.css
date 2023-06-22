@@ -15,3 +15,11 @@
   display: flex;
   gap: 25px;
 }
+
+.badge {
+  margin-right: 5px;
+}
+
+.profile-container {
+  display: flex;
+}
