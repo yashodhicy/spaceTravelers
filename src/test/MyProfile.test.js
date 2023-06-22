@@ -13,6 +13,12 @@ const store = mockStore({
       { mission_id: 2, mission_name: 'Mission 2', reserved: false },
     ],
   },
+  rockets: {
+    rockets: [
+      { id: 1, rocket_name: 'Rocket 1', reserved: true },
+      { id: 2, rocket_name: 'Rocket 2', reserved: false },
+    ],
+  },
 });
 
 test('renders MyProfile component', () => {
@@ -26,4 +32,8 @@ test('renders MyProfile component', () => {
   // Assert that the component renders the mission names correctly
   expect(getByText('Mission 1')).toBeInTheDocument();
   expect(queryByText('Mission 2')).toBeNull();
+
+  // Assert that the component renders the rocket names correctly
+  expect(getByText('Rocket 1')).toBeInTheDocument();
+  expect(queryByText('Rocket 2')).toBeNull();
 });
